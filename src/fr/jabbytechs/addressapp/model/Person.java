@@ -2,6 +2,9 @@ package fr.jabbytechs.addressapp.model;
 
 import java.time.LocalDate;
 
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import fr.jabbytechs.addressapp.util.LocalDateAdapter;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -101,6 +104,7 @@ public class Person {
 		return city;
 	}
 
+	@XmlJavaTypeAdapter(LocalDateAdapter.class)
 	public LocalDate getBirthday() {
 		return birthday.get();
 	}
